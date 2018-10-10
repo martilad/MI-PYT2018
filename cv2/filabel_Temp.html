@@ -1,0 +1,111 @@
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Marek Suchánek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filabel</title>
+
+    <link rel="stylesheet" href="filabel_Temp_files/bootstrap.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="filabel_Temp_files/style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>
+                filabel
+                <small class="text-muted">filename-pattern-based labeling of GitHub PRs</small>
+            </h1>
+        </header>
+        <hr>
+        <article id="content">
+            
+    <div id="intro">
+        <h2>Introduction</h2>
+
+        <p>This simple service uses GitHub webhooks to catch updates of 
+pull requests (PRs) and update the labels of that PR by matching changes
+ files with preconfigured patterns. It is mainly homework for MI-PYT 
+course, but can be actually quite useful although it consists only of 
+this info page (<code>GET /</code>) and webhook listener (<code>POST /</code>).</p>
+    </div>
+    <div id="labels">
+        <h2>Labels configuration</h2>
+
+        
+            <ul>
+                <li>frontend
+                    <ul>
+                        
+                            <li><code>*/templates/*</code></li>
+                        
+                            <li><code>static/*</code></li>
+                        
+                    </ul>
+                </li>
+            </ul>
+        
+            <ul>
+                <li>backend
+                    <ul>
+                        
+                            <li><code>logic/*</code></li>
+                        
+                    </ul>
+                </li>
+            </ul>
+        
+            <ul>
+                <li>docs
+                    <ul>
+                        
+                            <li><code>*.md</code></li>
+                        
+                            <li><code>LICENSE</code></li>
+                        
+                            <li><code>docs/*</code></li>
+                        
+                    </ul>
+                </li>
+            </ul>
+        
+    </div>
+    <div id="usage">
+        <h2>Service usage</h2>
+
+        <p>To manage PRs of your repo by this service you need to know configured <em>webhook secret</em>, then just:</p>
+
+        <ol>
+            <li>Go to your repository settings at GitHub</li>
+            <li>Pick <em>webhooks</em> from left menu</li>
+            <li>Press <em>Add webhook</em></li>
+            <li>Create webhook with configuration below and press <em>Add webhook</em></li>
+        </ol>
+
+        <h3>Webhook configuration</h3>
+
+        <dl>
+            <dt>Payload URL</dt>
+            <dd>http://mareksuchanek.pythonanywhere.com/</dd>
+            <dt>Content type</dt>
+            <dd>application/json</dd>
+            <dt>Secret</dt>
+            <dd><em>webhook secret</em> (cannot be published)</dd>
+            <dt>Which events would you like to trigger this webhook?</dt>
+            <dd>Let me select individual events: <strong>Pull requests</strong></dd>
+            <dt>Active</dt>
+            <dd>Yes</dd>
+        </dl>
+    </div>
+
+        </article>
+        <hr>
+        <footer class="text-muted">
+            Marek Suchánek &amp; Miro Hrončok (for <a href="https://github.com/cvut/MI-PYT/" target="_blank">MI-PYT</a>) © 2018
+        </footer>
+    </main>
+
+    <script src="filabel_Temp_files/jquery-3.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="filabel_Temp_files/popper.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="filabel_Temp_files/bootstrap.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body></html>

@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+	<head><title> Hello </title>
+	
+	<link href="{{ url_for('static', filename='style.css' )}}", rel="stylesheet"/>
+
+	</head>
+	<body>
+		{% if username %}
+			<h1> hello, {{ username | camel }}</h1>
+		{% else %}
+			<h1> Hey yopu</h1>
+		{% endif %}
+	</body>
+</html>
+	
