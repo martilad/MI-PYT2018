@@ -6,7 +6,7 @@ import click
 #prompt co se vypise pro spusteni
 @click.option('--color/--no-color', help='make colored output')
 #@click.argument('color', type=click.Choice(['red', 'pink', 'blue']))
-def main(count, name, color):
+def filabel(count, name, color):
 	if color:
 		name = click.style(name, fg='blue')
 	print (name)
@@ -36,4 +36,4 @@ def add(files):
 
 
 if __name__ == '__main__':
-	my_git()
+	filabel()
