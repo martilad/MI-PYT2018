@@ -1,2 +1,5 @@
 __venv__
 __pycache__
+build
+dist
+isholiday.egg-info
