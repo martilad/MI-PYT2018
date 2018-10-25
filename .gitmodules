@@ -1,3 +1,6 @@
 [submodule "filabel"]
 	path = filabel
 	url = git@github.com:martilad/filabel.git
+[submodule "pandas"]
+	path = pandas
+	url = git@github.com:martilad/pandas.git
