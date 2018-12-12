@@ -7,3 +7,6 @@
 [submodule "beeclust"]
 	path = beeclust
 	url = git@github.com:martilad/beeclust.git
+[submodule "worldmor"]
+	path = worldmor
+	url = git@github.com:martilad/worldmor.git
