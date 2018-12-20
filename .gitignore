@@ -5,3 +5,4 @@ dist
 isholiday.egg-info
 _build
 build
+.ipynb_checkpoints
